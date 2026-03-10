@@ -90,24 +90,6 @@ function PowerButton({ onLit }: { onLit: () => void }) {
           exit={{ opacity: 0 }}
           transition={{ duration: 0.5 }}
         >
-      {/* Scroll hint - shows there's more content below */}
-      <motion.p
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 font-syncopate text-white/70 text-[0.45rem] tracking-[0.3em] uppercase"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.5, duration: 0.5 }}
-      >
-        Scroll to explore
-      </motion.p>
-      <motion.div
-        className="absolute bottom-4 left-1/2 -translate-x-1/2"
-        animate={{ y: [0, 6, 0] }}
-        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-      >
-        <svg className="w-5 h-5 text-white/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-        </svg>
-      </motion.div>
       <p
         className="font-syncopate text-[10px] tracking-[0.35em] text-white uppercase mb-6"
         style={{ letterSpacing: "0.35em" }}

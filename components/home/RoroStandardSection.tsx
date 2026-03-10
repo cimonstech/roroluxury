@@ -13,16 +13,20 @@ export default function RoroStandardSection() {
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
-      <div className="relative max-w-[1440px] mx-auto px-6 sm:px-12 md:px-20">
-      <div className="relative w-full aspect-[4/3] md:aspect-[1024/638] rounded-lg overflow-hidden">
+      {/* Full-width image - edges touch viewport (like green layout guides) */}
+      <div className="relative w-full aspect-[4/3] md:aspect-[1024/638] min-h-[320px] md:min-h-[400px]">
         <Image
           src="/Wall-Sconces-Hall-1024x638.webp"
           alt="Wall sconces in hallway"
           fill
-          className="object-cover md:object-contain"
+          className="object-cover object-center"
+          sizes="100vw"
         />
       </div>
 
+      {/* Overlays - positioned within content area */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="relative h-full max-w-[1440px] mx-auto px-6 sm:px-12 md:px-20 pointer-events-auto">
       <div className="absolute top-6 left-6 right-6 sm:top-8 sm:left-8 sm:right-auto sm:max-w-md md:top-16 md:left-16 z-10">
         <p
           className="font-syncopate mb-1.5"
@@ -80,6 +84,7 @@ export default function RoroStandardSection() {
           Shop the Look →
         </span>
       </Link>
+        </div>
       </div>
     </motion.section>
   );

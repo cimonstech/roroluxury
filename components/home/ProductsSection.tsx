@@ -83,7 +83,7 @@ export default function ProductsSection() {
             <h3 className="font-cormorant italic text-roro-white text-xl mb-2">
               Walls That Speak
             </h3>
-            <p className="font-jost font-light text-roro-white/90 text-sm leading-relaxed">
+            <p className="hidden md:block font-jost font-light text-roro-white/90 text-sm leading-relaxed">
               A great wall light does more than illuminate. It sculpts the room
               around it — turning empty walls into statements of taste.
             </p>
@@ -160,7 +160,7 @@ export default function ProductsSection() {
             <h3 className="font-cormorant italic text-roro-white text-xl mb-2">
               Your Finest Moments, Lit Perfectly.
             </h3>
-            <p className="font-jost font-light text-roro-white/90 text-sm leading-relaxed">
+            <p className="hidden md:block font-jost font-light text-roro-white/90 text-sm leading-relaxed">
               Roro brings the kind of light that makes every quiet evening feel
               like a scene worth remembering.
             </p>

@@ -18,7 +18,7 @@ export const products: Product[] = [
     description: "A grand crystal centrepiece for exceptional spaces.",
     longDescription:
       "The Lumière Royale commands every room it enters. Cascading crystal formations catch and scatter light in all directions, creating an atmosphere that is both dramatic and intimate. Designed for ceilings that deserve a crown.",
-    image: "/products/chandelier.webp",
+    image: "/products/Chandelier.webp",
     heroPin: { x: 0, y: 0 },
   },
   {

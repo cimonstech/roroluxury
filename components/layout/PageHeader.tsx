@@ -63,12 +63,12 @@ export function PageHeader({
         transition={{ duration: 2, ease: "easeInOut" }}
         aria-hidden
       />
-      {/* Power button - right side, hidden once lit */}
+      {/* Power button - right side on desktop, hidden once lit */}
       {!isLit && (
         <button
           type="button"
           onClick={() => setIsLit(true)}
-          className="absolute top-1/2 right-6 md:right-10 -translate-y-1/2 z-[100] flex flex-col items-center gap-3 cursor-none group pointer-events-auto"
+          className="absolute top-1/2 right-6 md:right-10 -translate-y-1/2 z-[100] hidden md:flex flex-col items-center gap-3 cursor-none group pointer-events-auto"
           data-cursor-hover
         >
           <p className="font-syncopate text-[9px] tracking-[0.3em] text-white/90 uppercase">
@@ -91,7 +91,7 @@ export function PageHeader({
           </span>
         </button>
       )}
-      {/* Title content */}
+      {/* Title content + mobile power button (below title) */}
       <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-8 pointer-events-none">
         <h1
           className="font-cormorant italic text-roro-white relative z-10 drop-shadow-lg"
@@ -106,6 +106,34 @@ export function PageHeader({
           <p className="font-syncopate text-roro-white/90 text-[0.5rem] tracking-[0.3em] uppercase mt-4 relative z-10 drop-shadow">
             {subtitle}
           </p>
+        )}
+        {/* Mobile: power button below title, smaller icon, small text under */}
+        {!isLit && (
+          <button
+            type="button"
+            onClick={() => setIsLit(true)}
+            className="md:hidden mt-4 flex flex-col items-center gap-1.5 pointer-events-auto cursor-none group z-[100]"
+            data-cursor-hover
+          >
+            <span
+              className="w-9 h-9 rounded-full border-2 border-white flex items-center justify-center cursor-pointer hover:scale-105 transition-transform bg-black/20 backdrop-blur-sm"
+              style={{
+                boxShadow: "0 0 12px rgba(255,255,255,0.25)",
+              }}
+              aria-label="Turn on the lights"
+            >
+              <Image
+                src="/roro_icon.png"
+                alt=""
+                width={16}
+                height={16}
+                className="brightness-0 invert"
+              />
+            </span>
+            <p className="font-syncopate text-[7px] tracking-[0.2em] text-white/90 uppercase">
+              Turn on the lights
+            </p>
+          </button>
         )}
       </div>
     </header>
