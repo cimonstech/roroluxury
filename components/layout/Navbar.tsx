@@ -64,7 +64,7 @@ export function Navbar() {
   return (
     <>
       <nav
-        className="fixed top-4 left-4 right-4 md:top-6 md:left-1/2 md:right-auto md:-translate-x-1/2 z-50 flex items-center justify-between md:justify-center gap-4 md:gap-12 px-4 py-2.5 md:px-7 md:py-2.5 md:w-fit md:rounded-full rounded-xl transition-all duration-300"
+        className="fixed top-4 left-4 right-4 md:top-6 md:left-1/2 md:right-auto md:-translate-x-1/2 z-[100] flex items-center justify-between md:justify-center gap-4 md:gap-12 px-4 py-2.5 md:px-7 md:py-2.5 md:w-fit md:rounded-full rounded-xl transition-all duration-300"
         style={{
           background: useDarkNav
             ? "rgba(10, 8, 5, 0.9)"
@@ -146,7 +146,7 @@ export function Navbar() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-40 bg-roro-black/95 backdrop-blur-md md:hidden pt-24 px-6 pb-8"
+            className="fixed inset-0 z-[95] bg-roro-black/95 backdrop-blur-md md:hidden pt-24 px-6 pb-8 overflow-y-auto"
           >
             <motion.nav
               className="flex flex-col gap-6"
@@ -158,6 +158,14 @@ export function Navbar() {
                 closed: {},
               }}
             >
+              {!isHome && (
+                <motion.p
+                  variants={{ open: { opacity: 1, y: 0 }, closed: { opacity: 0, y: 10 } }}
+                  className="font-jost font-light text-roro-white/90 text-sm pb-4 border-b border-roro-white/20"
+                >
+                  Tip: Double tap anywhere on the header area to turn on the lights.
+                </motion.p>
+              )}
               {NAV_LINKS.map((link) => (
                 <motion.div key={link.href} variants={{ open: { opacity: 1, y: 0 }, closed: { opacity: 0, y: 10 } }}>
                   <Link
@@ -168,14 +176,6 @@ export function Navbar() {
                   </Link>
                 </motion.div>
               ))}
-              {!isHome && (
-                <motion.p
-                  variants={{ open: { opacity: 1, y: 0 }, closed: { opacity: 0, y: 10 } }}
-                  className="font-jost font-light text-roro-white/70 text-sm mt-4 pt-4 border-t border-roro-white/20"
-                >
-                  Tip: Double tap anywhere on the header area to turn on the lights.
-                </motion.p>
-              )}
             </motion.nav>
           </motion.div>
         )}

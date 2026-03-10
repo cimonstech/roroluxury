@@ -118,34 +118,6 @@ export function PageHeader({
             {subtitle}
           </p>
         )}
-        {/* Mobile: power button below title, smaller icon, small text under */}
-        {!isLit && (
-          <button
-            type="button"
-            onClick={() => setIsLit(true)}
-            className="md:hidden mt-4 flex flex-col items-center gap-1.5 pointer-events-auto cursor-none group z-[100]"
-            data-cursor-hover
-          >
-            <span
-              className="w-9 h-9 rounded-full border-2 border-white flex items-center justify-center cursor-pointer hover:scale-105 transition-transform bg-black/20 backdrop-blur-sm"
-              style={{
-                boxShadow: "0 0 12px rgba(255,255,255,0.25)",
-              }}
-              aria-label="Turn on the lights"
-            >
-              <Image
-                src="/roro_icon.png"
-                alt=""
-                width={16}
-                height={16}
-                className="brightness-0 invert"
-              />
-            </span>
-            <p className="font-syncopate text-[7px] tracking-[0.2em] text-white/90 uppercase">
-              Turn on the lights
-            </p>
-          </button>
-        )}
       </div>
     </header>
   );

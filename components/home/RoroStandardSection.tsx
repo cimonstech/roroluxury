@@ -8,19 +8,20 @@ export default function RoroStandardSection() {
   return (
     <motion.section
       className="relative w-full overflow-hidden"
+      style={{ background: "#F5F0E8" }}
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
-      {/* Full-width image - fixed height, edge-to-edge (aligned with content bounds) */}
-      <div className="relative w-full h-[520px] sm:h-[560px] md:h-[600px] lg:h-[640px]">
+      {/* Image - same width as 4th section (max-w-[1440px]), fixed height, desktop 2.5x */}
+      <div className="relative w-full max-w-[1440px] mx-auto h-[520px] sm:h-[560px] md:h-[1500px] lg:h-[1600px]">
         <Image
           src="/Wall-Sconces-Hall-1024x638.webp"
           alt="Wall sconces in hallway"
           fill
           className="object-cover object-center"
-          sizes="100vw"
+          sizes="(max-width: 1440px) 100vw, 1440px"
         />
       </div>
 
@@ -29,11 +30,10 @@ export default function RoroStandardSection() {
         <div className="relative h-full max-w-[1440px] mx-auto px-6 sm:px-12 md:px-20 pointer-events-auto">
       <div className="absolute top-6 left-6 right-6 sm:top-8 sm:left-8 sm:right-auto sm:max-w-md md:top-16 md:left-16 z-10">
         <p
-          className="font-syncopate mb-1.5"
+          className="font-syncopate mb-1.5 text-roro-white md:text-[#8A8680]"
           style={{
             fontSize: "0.4rem",
             letterSpacing: "0.35em",
-            color: "#8A8680",
           }}
         >
           THE RORO STANDARD
@@ -53,7 +53,7 @@ export default function RoroStandardSection() {
         </h2>
       </div>
 
-      <div className="absolute top-24 left-6 right-6 sm:top-8 sm:right-8 sm:left-auto md:top-16 md:right-16 max-w-sm sm:text-right z-10">
+      <div className="absolute top-24 left-6 right-6 sm:top-8 sm:right-8 sm:left-auto md:top-16 md:right-16 max-w-sm sm:text-right z-10 hidden md:block">
         <p
           className="font-jost font-light text-roro-white/90"
           style={{ fontSize: "1rem", lineHeight: 1.65 }}
