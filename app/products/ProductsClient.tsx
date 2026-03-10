@@ -98,7 +98,7 @@ export function ProductsClient() {
             hidden: {},
           }}
         >
-          {filtered.map((product, i) => (
+          {filtered.map((product) => (
             <motion.div
               key={product.id}
               variants={{
