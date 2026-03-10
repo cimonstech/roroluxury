@@ -13,8 +13,8 @@ export default function RoroStandardSection() {
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
-      {/* Full-width image - edges touch viewport (like green layout guides) */}
-      <div className="relative w-full aspect-[4/3] md:aspect-[1024/638] min-h-[320px] md:min-h-[400px]">
+      {/* Full-width image - fixed height, edge-to-edge (aligned with content bounds) */}
+      <div className="relative w-full h-[520px] sm:h-[560px] md:h-[600px] lg:h-[640px]">
         <Image
           src="/Wall-Sconces-Hall-1024x638.webp"
           alt="Wall sconces in hallway"
@@ -75,12 +75,12 @@ export default function RoroStandardSection() {
           Light the Way
         </h3>
         <p
-          className="font-jost font-light text-roro-grey text-sm leading-relaxed mb-4"
+          className="hidden md:block font-jost font-light text-roro-grey text-sm leading-relaxed mb-4"
           style={{ lineHeight: 1.6 }}
         >
           Hallway sconces that guide and welcome. Every passage, considered.
         </p>
-        <span className="inline-flex items-center justify-center px-4 py-2 rounded-full bg-roro-black text-roro-white font-syncopate text-[0.5rem] tracking-[0.2em] uppercase w-fit transition-opacity hover:opacity-90">
+        <span className="inline-flex items-center justify-center px-4 py-2 rounded-full bg-roro-black text-roro-white font-syncopate text-[0.5rem] tracking-[0.2em] uppercase w-fit transition-opacity hover:opacity-90 mt-4 md:mt-0">
           Shop the Look →
         </span>
       </Link>

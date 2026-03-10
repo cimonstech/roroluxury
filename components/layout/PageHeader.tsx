@@ -63,6 +63,17 @@ export function PageHeader({
         transition={{ duration: 2, ease: "easeInOut" }}
         aria-hidden
       />
+      {/* Double-tap overlay - turn on lights when double-tapping anywhere on header (mobile) */}
+      {!isLit && (
+        <div
+          role="button"
+          tabIndex={0}
+          onDoubleClick={() => setIsLit(true)}
+          onKeyDown={(e) => e.key === "Enter" && setIsLit(true)}
+          className="absolute inset-0 z-[90] md:hidden cursor-none"
+          aria-label="Double tap to turn on the lights"
+        />
+      )}
       {/* Power button - right side on desktop, hidden once lit */}
       {!isLit && (
         <button

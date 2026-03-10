@@ -168,6 +168,14 @@ export function Navbar() {
                   </Link>
                 </motion.div>
               ))}
+              {!isHome && (
+                <motion.p
+                  variants={{ open: { opacity: 1, y: 0 }, closed: { opacity: 0, y: 10 } }}
+                  className="font-jost font-light text-roro-white/70 text-sm mt-4 pt-4 border-t border-roro-white/20"
+                >
+                  Tip: Double tap anywhere on the header area to turn on the lights.
+                </motion.p>
+              )}
             </motion.nav>
           </motion.div>
         )}
