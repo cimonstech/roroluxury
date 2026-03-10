@@ -62,15 +62,15 @@ export default function ProductsSection() {
         </div>
       </div>
 
-      {/* Three-column layout - 1 col mobile, 2 col tablet, 3 col desktop */}
-      <div className="mt-10 md:mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      {/* Three-column layout - equal width columns, 520px height on desktop */}
+      <div className="mt-10 md:mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:items-stretch">
         {/* Column 1 */}
-        <div className="relative rounded-lg overflow-hidden min-h-[280px] md:min-h-[400px] lg:min-h-[520px]">
+        <div className="relative rounded-lg overflow-hidden min-h-[280px] md:min-h-[400px] lg:h-[520px]">
           <Image
             src="/indoor_wall_light.jpg"
             alt="Indoor wall lighting"
             fill
-            className="object-cover"
+            className="object-cover object-center"
           />
           <div
             className="absolute bottom-4 left-4 right-4 p-5 rounded-lg max-w-sm"
@@ -91,13 +91,13 @@ export default function ProductsSection() {
         </div>
 
         {/* Column 2 */}
-        <div className="flex flex-col gap-4">
-          <div className="relative rounded-lg overflow-hidden flex-1 min-h-[200px] md:min-h-[250px]">
+        <div className="flex flex-col gap-4 min-h-[280px] md:min-h-[400px] lg:h-[520px]">
+          <div className="relative rounded-lg overflow-hidden flex-1 min-h-[140px]">
             <Image
               src="/wall_lamp.webp"
               alt="Wall lamp"
               fill
-              className="object-cover"
+              className="object-cover object-center"
             />
             <div
               className="absolute bottom-0 left-0 right-0 p-5 rounded-b-lg"
@@ -107,14 +107,14 @@ export default function ProductsSection() {
               }}
             />
           </div>
-          <div className="grid grid-cols-2 gap-4 flex-1 min-h-[200px] md:min-h-[250px]">
+          <div className="grid grid-cols-2 gap-4 flex-1 min-h-[140px]">
             {/* Left - avenila-luxury-outdoorLight.jpg */}
             <div className="relative rounded-lg overflow-hidden">
               <Image
                 src="/avenila-luxury-outdoorLight.jpg"
                 alt="Outdoor lighting"
                 fill
-                className="object-cover"
+                className="object-cover object-center"
               />
               <div
                 className="absolute bottom-0 left-0 right-0 p-5 rounded-b-lg"
@@ -127,7 +127,7 @@ export default function ProductsSection() {
             {/* Right - Black card with roro_icon.png */}
             <Link
               href="/products"
-              className="relative rounded-lg overflow-hidden flex items-center justify-center bg-roro-black min-h-[250px] cursor-pointer"
+              className="relative rounded-lg overflow-hidden flex items-center justify-center bg-roro-black min-h-0 cursor-pointer"
               data-cursor-hover
             >
               <Image
@@ -142,12 +142,12 @@ export default function ProductsSection() {
         </div>
 
         {/* Column 3 */}
-        <div className="relative rounded-lg overflow-hidden min-h-[280px] md:min-h-[400px] lg:min-h-[520px]">
+        <div className="relative rounded-lg overflow-hidden min-h-[280px] md:min-h-[400px] lg:h-[520px]">
           <Image
             src="/lady_indoor_light.jpeg"
             alt="Lifestyle indoor lighting"
             fill
-            className="object-cover"
+            className="object-cover object-center"
           />
           <div
             className="absolute bottom-4 left-4 right-4 p-5 rounded-lg max-w-sm"
