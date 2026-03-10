@@ -13,7 +13,8 @@ export default function RoroStandardSection() {
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
-      <div className="relative w-full aspect-[4/3] md:aspect-[1024/638]">
+      <div className="relative max-w-[1440px] mx-auto px-6 sm:px-12 md:px-20">
+      <div className="relative w-full aspect-[4/3] md:aspect-[1024/638] rounded-lg overflow-hidden">
         <Image
           src="/Wall-Sconces-Hall-1024x638.webp"
           alt="Wall sconces in hallway"
@@ -79,6 +80,7 @@ export default function RoroStandardSection() {
           Shop the Look →
         </span>
       </Link>
+      </div>
     </motion.section>
   );
 }

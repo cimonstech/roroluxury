@@ -4,6 +4,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-y: scroll; /* Always show scrollbar so users know there's more content */
 }
 
 :root {
