@@ -23,14 +23,13 @@ export default function FeaturedShowcase() {
 
   return (
     <motion.section
-      className="w-full max-w-[1440px] mx-auto py-24 px-12 md:px-20 bg-roro-white"
-      initial={{ opacity: 1, y: 0 }}
+      className="w-full max-w-[1440px] mx-auto py-16 sm:py-20 md:py-24 px-6 sm:px-12 md:px-20 bg-roro-white"
+      initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.8 }}
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
     >
-      {/* Top Section */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 mb-24">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 lg:gap-24 mb-16 md:mb-24">
         {/* Left - Heading, copy, button */}
         <div className="flex flex-col justify-center">
           <h2
@@ -97,21 +96,27 @@ export default function FeaturedShowcase() {
         </div>
       </div>
 
-      {/* Bottom Section */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 lg:gap-24">
         {/* Left - Large product image */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.98 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
         <Link
           href={`/products/${featuredProduct.slug}`}
-          className="relative aspect-square max-h-[500px] rounded-xl overflow-hidden bg-roro-grey/10"
+          className="relative aspect-square max-h-[400px] md:max-h-[500px] rounded-xl overflow-hidden bg-roro-grey/10 block"
           data-cursor-hover
         >
           <Image
             src={featuredProduct.image}
             alt={featuredProduct.name}
             fill
-            className="object-contain p-8"
+            className="object-contain p-6 md:p-8"
           />
         </Link>
+        </motion.div>
 
         {/* Right - Features and stats */}
         <div className="flex flex-col justify-between">
@@ -157,29 +162,11 @@ export default function FeaturedShowcase() {
             </div>
             <div>
               <p className="font-cormorant text-roro-black text-2xl font-semibold">
-                200+
+                100+
               </p>
               <p className="font-syncopate text-roro-grey text-[0.45rem] tracking-[0.15em] uppercase">
-                Luxury spaces
+                Unique Lights
               </p>
-            </div>
-            <div className="flex gap-2 ml-auto">
-              <button
-                type="button"
-                className="w-10 h-10 rounded-full border border-roro-grey/40 flex items-center justify-center text-roro-black hover:bg-roro-black hover:text-roro-white hover:border-roro-black transition-colors cursor-none"
-                aria-label="Previous"
-                data-cursor-hover
-              >
-                ←
-              </button>
-              <button
-                type="button"
-                className="w-10 h-10 rounded-full border border-roro-grey/40 flex items-center justify-center text-roro-black hover:bg-roro-black hover:text-roro-white hover:border-roro-black transition-colors cursor-none"
-                aria-label="Next"
-                data-cursor-hover
-              >
-                →
-              </button>
             </div>
           </div>
         </div>

@@ -10,11 +10,11 @@ export default function CTASection() {
 
   return (
     <motion.section
-      className="w-full py-24 px-12 md:px-20 bg-roro-black"
-      initial={{ opacity: 1, y: 0 }}
+      className="w-full py-16 sm:py-20 md:py-24 px-6 sm:px-12 md:px-20 bg-roro-black"
+      initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.8 }}
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
     >
       <div className="max-w-[1440px] mx-auto flex flex-col md:flex-row items-center justify-between gap-12">
         <div className="flex-1 text-center md:text-left">
@@ -57,15 +57,21 @@ export default function CTASection() {
             </a>
           </div>
         </div>
-        <div className="flex-shrink-0">
+        <motion.div
+          className="flex-shrink-0"
+          initial={{ opacity: 0, x: 20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
           <Image
             src="/roro_luxury_white.png"
             alt={SITE.name}
             width={200}
             height={60}
-            className="object-contain opacity-80"
+            className="object-contain opacity-80 w-32 sm:w-40 md:w-[200px]"
           />
-        </div>
+        </motion.div>
       </div>
     </motion.section>
   );

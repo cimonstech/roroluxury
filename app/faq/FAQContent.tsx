@@ -33,7 +33,7 @@ export function FAQContent() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <div className="max-w-[800px] mx-auto px-8 md:px-20 py-24">
+    <div className="max-w-[800px] mx-auto px-6 sm:px-8 md:px-20 py-16 sm:py-24">
       <div className="space-y-4">
         {FAQ_ITEMS.map((item, i) => (
           <div

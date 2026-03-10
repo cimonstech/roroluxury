@@ -41,7 +41,7 @@ export default async function ProductDetailPage({ params }: ProductDetailProps) 
         image={product.image}
         objectFit="contain"
       />
-      <div className="max-w-[1440px] mx-auto px-8 md:px-20 py-24">
+      <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-20 py-16 sm:py-24">
         <Link
           href="/products"
           className="inline-flex items-center gap-2 font-syncopate text-roro-grey text-[0.5rem] tracking-[0.2em] uppercase mb-12 hover:text-roro-black transition-colors cursor-none"

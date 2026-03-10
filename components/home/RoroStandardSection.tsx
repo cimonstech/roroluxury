@@ -8,23 +8,21 @@ export default function RoroStandardSection() {
   return (
     <motion.section
       className="relative w-full overflow-hidden"
-      initial={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.8 }}
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
     >
-      {/* Full width image - shows entire image without cropping */}
-      <div className="relative w-full" style={{ aspectRatio: "1024/638" }}>
+      <div className="relative w-full aspect-[4/3] md:aspect-[1024/638]">
         <Image
           src="/Wall-Sconces-Hall-1024x638.webp"
           alt="Wall sconces in hallway"
           fill
-          className="object-contain"
+          className="object-cover md:object-contain"
         />
       </div>
 
-      {/* Top left - label and main heading */}
-      <div className="absolute top-12 left-12 md:top-16 md:left-16 max-w-md z-10">
+      <div className="absolute top-6 left-6 right-6 sm:top-8 sm:left-8 sm:right-auto sm:max-w-md md:top-16 md:left-16 z-10">
         <p
           className="font-syncopate mb-1.5"
           style={{
@@ -50,8 +48,7 @@ export default function RoroStandardSection() {
         </h2>
       </div>
 
-      {/* Top right - sub text */}
-      <div className="absolute top-12 right-12 md:top-16 md:right-16 max-w-sm text-right z-10">
+      <div className="absolute top-24 left-6 right-6 sm:top-8 sm:right-8 sm:left-auto md:top-16 md:right-16 max-w-sm sm:text-right z-10">
         <p
           className="font-jost font-light text-roro-white/90"
           style={{ fontSize: "1rem", lineHeight: 1.65 }}
@@ -61,10 +58,9 @@ export default function RoroStandardSection() {
         </p>
       </div>
 
-      {/* Bottom left - white card */}
       <Link
         href="/products"
-        className="absolute bottom-12 left-12 md:bottom-16 md:left-16 max-w-xs z-10 rounded-lg p-5 bg-roro-white cursor-none flex flex-col"
+        className="absolute bottom-6 left-6 right-6 sm:bottom-8 sm:left-8 sm:right-auto md:bottom-16 md:left-16 max-w-xs z-10 rounded-lg p-4 sm:p-5 bg-roro-white flex flex-col transition-transform hover:scale-[1.02]"
         style={{
           boxShadow: "0 8px 40px rgba(0,0,0,0.2)",
         }}

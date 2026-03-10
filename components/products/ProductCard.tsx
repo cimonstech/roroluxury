@@ -41,7 +41,7 @@ export function ProductCard({ product }: ProductCardProps) {
             className="object-contain p-6 transition-transform duration-500 group-hover:scale-105"
           />
           {/* Hover overlay: WhatsApp icon + Order now */}
-          <div className="absolute inset-0 bg-roro-white/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center gap-4">
+          <div className="absolute inset-0 bg-roro-white/90 opacity-0 group-hover:opacity-100 group-active:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center gap-3 sm:gap-4">
             <a
               href={whatsappOrderUrl}
               target="_blank"

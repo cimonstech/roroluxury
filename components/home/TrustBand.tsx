@@ -22,16 +22,16 @@ const STATS = [
 export default function TrustBand() {
   return (
     <motion.section
-      className="w-full max-w-[1440px] mx-auto flex items-center justify-between px-16 py-8"
+      className="w-full max-w-[1440px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-6 sm:gap-8 px-6 sm:px-12 md:px-16 py-6 sm:py-8"
       style={{
         background: "#0A0805",
         borderTop: "1px solid rgba(245,240,232,0.08)",
         borderBottom: "1px solid rgba(245,240,232,0.08)",
       }}
-      initial={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.8 }}
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
     >
       <div className="flex items-center gap-4">
         <div className="flex">
@@ -77,7 +77,7 @@ export default function TrustBand() {
         </div>
       </div>
 
-      <div className="flex items-center gap-8">
+      <div className="flex flex-wrap items-center justify-center sm:justify-end gap-6 sm:gap-8">
         {STATS.map((stat, i) => (
           <div key={stat.label} className="flex items-center gap-8">
             <div>

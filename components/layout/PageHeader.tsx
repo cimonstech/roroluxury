@@ -28,7 +28,7 @@ export function PageHeader({
     objectFit === "contain" ? "object-contain" : "object-cover";
 
   return (
-    <header className="relative w-full h-[40vh] min-h-[280px] max-h-[420px] overflow-hidden">
+    <header className="relative w-full h-[35vh] min-h-[220px] sm:min-h-[280px] sm:h-[40vh] max-h-[420px] overflow-hidden">
       {/* Base (dark) image */}
       <Image
         src={image}

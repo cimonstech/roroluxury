@@ -28,7 +28,7 @@ export default function CartPage() {
           subtitle="Your Selection"
           lightImage="/room-light.jpg"
         />
-        <div className="max-w-[1440px] mx-auto px-8 md:px-20 py-24 text-center">
+        <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-20 py-16 sm:py-24 text-center">
           <p className="font-jost font-light text-roro-grey text-lg mb-8">
             Your cart is empty.
           </p>
@@ -52,8 +52,8 @@ export default function CartPage() {
         subtitle="Your Selection"
         lightImage="/room-light.jpg"
       />
-      <div className="max-w-[1440px] mx-auto px-8 md:px-20 py-24">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
+      <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-20 py-16 sm:py-24">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16">
           {/* Cart items */}
           <div className="lg:col-span-2 space-y-6">
             {items.map((item) => (

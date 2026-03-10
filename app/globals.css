@@ -16,7 +16,13 @@ body {
   padding: 0;
   color: #F5F0E8;
   background: #0A0805;
-  cursor: none;
+}
+
+/* Custom cursor only on devices that support hover (desktop) */
+@media (hover: hover) {
+  body {
+    cursor: none;
+  }
 }
 
 @keyframes pulse-glow {
@@ -51,6 +57,16 @@ body {
 
 .animate-blink {
   animation: blink 2.5s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 @layer utilities {

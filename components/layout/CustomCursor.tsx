@@ -89,8 +89,8 @@ export function CustomCursor() {
         }}
         transition={{
           type: "spring",
-          stiffness: 100,
-          damping: 12,
+          stiffness: 500,
+          damping: 28,
         }}
       >
         <motion.div

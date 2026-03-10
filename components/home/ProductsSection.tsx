@@ -7,15 +7,15 @@ import { motion } from "framer-motion";
 export default function ProductsSection() {
   return (
     <motion.section
-      className="w-full max-w-[1440px] mx-auto py-[120px] px-20"
+      className="w-full max-w-[1440px] mx-auto py-16 sm:py-20 md:py-[120px] px-6 sm:px-12 md:px-20"
       style={{ background: "#F5F0E8" }}
-      initial={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.8 }}
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
     >
       {/* Top area */}
-      <div className="flex items-end justify-between gap-12">
+      <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-8 md:gap-12">
         <div>
           <p
             className="font-syncopate mb-4"
@@ -40,7 +40,7 @@ export default function ProductsSection() {
             Luxury.
           </p>
         </div>
-        <div className="max-w-[360px]">
+        <div className="w-full md:max-w-[360px]">
           <p
             className="font-jost font-light"
             style={{
@@ -62,17 +62,10 @@ export default function ProductsSection() {
         </div>
       </div>
 
-      {/* Three-column layout */}
-      <div
-        className="mt-16 grid gap-4"
-        style={{
-          gridTemplateColumns: "1fr 1fr 1fr",
-          gridTemplateRows: "auto",
-          minHeight: 520,
-        }}
-      >
-        {/* Column 1 - Full height, indoor_wall_light.jpg with text blur card */}
-        <div className="relative rounded-lg overflow-hidden min-h-[520px]">
+      {/* Three-column layout - 1 col mobile, 2 col tablet, 3 col desktop */}
+      <div className="mt-10 md:mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {/* Column 1 */}
+        <div className="relative rounded-lg overflow-hidden min-h-[280px] md:min-h-[400px] lg:min-h-[520px]">
           <Image
             src="/indoor_wall_light.jpg"
             alt="Indoor wall lighting"
@@ -97,10 +90,9 @@ export default function ProductsSection() {
           </div>
         </div>
 
-        {/* Column 2 - Top: wall_lamp, Bottom: 2 cards */}
+        {/* Column 2 */}
         <div className="flex flex-col gap-4">
-          {/* Top card - wall_lamp.webp */}
-          <div className="relative rounded-lg overflow-hidden flex-1 min-h-[250px]">
+          <div className="relative rounded-lg overflow-hidden flex-1 min-h-[200px] md:min-h-[250px]">
             <Image
               src="/wall_lamp.webp"
               alt="Wall lamp"
@@ -115,8 +107,7 @@ export default function ProductsSection() {
               }}
             />
           </div>
-          {/* Bottom - 2 cards side by side */}
-          <div className="grid grid-cols-2 gap-4 flex-1 min-h-[250px]">
+          <div className="grid grid-cols-2 gap-4 flex-1 min-h-[200px] md:min-h-[250px]">
             {/* Left - avenila-luxury-outdoorLight.jpg */}
             <div className="relative rounded-lg overflow-hidden">
               <Image
@@ -150,8 +141,8 @@ export default function ProductsSection() {
           </div>
         </div>
 
-        {/* Column 3 - Full height, lady_indoor_light.jpeg with text blur card */}
-        <div className="relative rounded-lg overflow-hidden min-h-[520px]">
+        {/* Column 3 */}
+        <div className="relative rounded-lg overflow-hidden min-h-[280px] md:min-h-[400px] lg:min-h-[520px]">
           <Image
             src="/lady_indoor_light.jpeg"
             alt="Lifestyle indoor lighting"

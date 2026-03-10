@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useMemo } from "react";
+import { motion } from "framer-motion";
 import { products } from "@/lib/products";
 import { ProductCard } from "@/components/products/ProductCard";
 
@@ -30,7 +31,7 @@ export function ProductsClient() {
   }, [search, category]);
 
   return (
-    <div className="max-w-[1440px] mx-auto px-8 md:px-20 py-24">
+    <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-20 py-16 sm:py-24">
       <div className="mb-16">
         <h2
           className="font-cormorant italic text-roro-black max-w-2xl mb-10"
@@ -88,11 +89,28 @@ export function ProductsClient() {
       </div>
 
       {filtered.length > 0 ? (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {filtered.map((product) => (
-            <ProductCard key={product.id} product={product} />
+        <motion.div
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8"
+          initial="hidden"
+          animate="visible"
+          variants={{
+            visible: { transition: { staggerChildren: 0.08 } },
+            hidden: {},
+          }}
+        >
+          {filtered.map((product, i) => (
+            <motion.div
+              key={product.id}
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { opacity: 1, y: 0 },
+              }}
+              transition={{ duration: 0.4, ease: "easeOut" }}
+            >
+              <ProductCard product={product} />
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       ) : (
         <p className="font-jost font-light text-roro-grey text-center py-16">
           No products match your search.

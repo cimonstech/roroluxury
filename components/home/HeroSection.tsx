@@ -24,10 +24,6 @@ export default function HeroSection() {
   const { setLit } = useHero();
   const [activeProduct, setActiveProduct] = useState<number | null>(null);
 
-  const activeProductData = activeProduct
-    ? HERO_PRODUCTS.find((p) => p.id === activeProduct)
-    : undefined;
-
   return (
     <section
       className="relative h-screen w-full overflow-hidden"
@@ -53,7 +49,6 @@ export default function HeroSection() {
       <LitContent
         activeProduct={activeProduct}
         setActiveProduct={setActiveProduct}
-        activeProductData={activeProductData}
       />
     </section>
   );
@@ -129,11 +124,9 @@ function PowerButton({ onLit }: { onLit: () => void }) {
 function LitContent({
   activeProduct,
   setActiveProduct,
-  activeProductData,
 }: {
   activeProduct: number | null;
   setActiveProduct: (id: number | null) => void;
-  activeProductData: (typeof HERO_PRODUCTS)[number] | undefined;
 }) {
   const { isLit } = useHero();
 
@@ -150,34 +143,38 @@ function LitContent({
           transition={{ duration: 0.8, delay: 2, ease: "easeOut" }}
         >
           <p
-            className="font-cormorant italic text-white mb-8"
+            className="font-cormorant italic text-white mb-6 sm:mb-8"
             style={{
-              fontSize: "clamp(2.8rem, 4.5vw, 5rem)",
+              fontSize: "clamp(2rem, 6vw, 5rem)",
               lineHeight: 1.2,
             }}
           >
             Every Room Deserves a Masterpiece.
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-4">
-            <Link
-              href="/about"
-              className="inline-flex items-center justify-center min-w-[200px] px-6 py-3 rounded-full font-syncopate text-white text-[0.5rem] tracking-[0.2em] uppercase transition-opacity hover:opacity-90 cursor-none bg-roro-black border-2 border-white"
-              data-cursor-hover
-            >
-              Experience the Collection
-            </Link>
-            <Link
-              href="/products"
-              className="inline-flex items-center justify-center min-w-[200px] px-6 py-3 rounded-full font-syncopate text-white text-[0.5rem] tracking-[0.2em] uppercase transition-opacity hover:opacity-80 cursor-none"
-              style={{
-                background: "rgba(245, 240, 232, 0.1)",
-                backdropFilter: "blur(16px)",
-                border: "1px solid rgba(245, 240, 232, 0.15)",
-              }}
-              data-cursor-hover
-            >
-              Shop Now
-            </Link>
+          <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-3 sm:gap-4">
+            <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+              <Link
+                href="/about"
+                className="inline-flex items-center justify-center min-w-[180px] sm:min-w-[200px] px-5 py-2.5 sm:px-6 sm:py-3 rounded-full font-syncopate text-white text-[0.5rem] tracking-[0.2em] uppercase transition-opacity hover:opacity-90 bg-roro-black border-2 border-white"
+                data-cursor-hover
+              >
+                Experience the Collection
+              </Link>
+            </motion.div>
+            <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+              <Link
+                href="/products"
+                className="inline-flex items-center justify-center min-w-[180px] sm:min-w-[200px] px-5 py-2.5 sm:px-6 sm:py-3 rounded-full font-syncopate text-white text-[0.5rem] tracking-[0.2em] uppercase transition-opacity hover:opacity-80"
+                style={{
+                  background: "rgba(245, 240, 232, 0.1)",
+                  backdropFilter: "blur(16px)",
+                  border: "1px solid rgba(245, 240, 232, 0.15)",
+                }}
+                data-cursor-hover
+              >
+                Shop Now
+              </Link>
+            </motion.div>
           </div>
         </motion.div>
       </div>
@@ -203,7 +200,7 @@ function LitContent({
             >
               <motion.button
                 type="button"
-                className="w-10 h-10 rounded-full border border-white flex items-center justify-center font-syncopate text-white text-sm bg-white/10 backdrop-blur-sm cursor-pointer hover:scale-110 hover:border-roro-white/90 transition-all shrink-0"
+                className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border border-white flex items-center justify-center font-syncopate text-white text-xs sm:text-sm bg-white/10 backdrop-blur-sm cursor-pointer hover:scale-110 active:scale-95 border-roro-white/90 transition-transform shrink-0"
                 style={{
                   boxShadow: "0 0 12px rgba(255,255,255,0.3)",
                   animation: "pulse-ring 2s ease-in-out infinite",
@@ -229,7 +226,7 @@ function LitContent({
                       animate={{ opacity: 1, x: 0 }}
                       exit={{ opacity: 0, x: -8 }}
                       transition={{ duration: 0.25, ease: "easeOut" }}
-                      className="rounded-lg px-4 py-3 bg-white shadow-xl whitespace-nowrap"
+                      className="rounded-lg px-3 py-2 sm:px-4 sm:py-3 bg-white shadow-xl whitespace-nowrap"
                       style={{
                         boxShadow: "0 8px 40px rgba(0,0,0,0.25)",
                       }}
