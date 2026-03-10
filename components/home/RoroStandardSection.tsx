@@ -7,15 +7,14 @@ import { motion } from "framer-motion";
 export default function RoroStandardSection() {
   return (
     <motion.section
-      className="relative w-full overflow-hidden"
-      style={{ background: "#F5F0E8" }}
+      className="relative w-full overflow-hidden bg-roro-black"
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
-      {/* Image - same width as 4th section (max-w-[1440px]), fixed height, desktop 2.5x */}
-      <div className="relative w-full max-w-[1440px] mx-auto h-[520px] sm:h-[560px] md:h-[1500px] lg:h-[1600px]">
+      {/* Image - same width as 4th section (max-w-[1440px]), fixed height, desktop ~2/3 of previous */}
+      <div className="relative w-full max-w-[1440px] mx-auto h-[520px] sm:h-[560px] md:h-[1000px] lg:h-[1067px]">
         <Image
           src="/Wall-Sconces-Hall-1024x638.webp"
           alt="Wall sconces in hallway"
