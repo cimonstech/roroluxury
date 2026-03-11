@@ -9,6 +9,12 @@ import { ProductCard } from "@/components/products/ProductCard";
 
 const SWIPE_THRESHOLD = 50;
 
+const useCaseSlideVariants = {
+  enter: (direction: number) => ({ x: `${direction * 100}%` }),
+  center: { x: 0 },
+  exit: (direction: number) => ({ x: `${direction * -100}%` }),
+};
+
 interface ProductDetailClientProps {
   product: Product;
   related: Product[];
@@ -35,13 +41,13 @@ export function ProductDetailClient({
   const goNext = () =>
     setActiveImageIndex((i) => (i === images.length - 1 ? 0 : i + 1));
 
-  const useCaseGoPrev = () => {
+  const goToPrevUseCase = () => {
     setUseCaseDirection(-1);
     setUseCaseImageIndex((i) =>
       i === 0 ? useCaseImages.length - 1 : i - 1
     );
   };
-  const useCaseGoNext = () => {
+  const goToNextUseCase = () => {
     setUseCaseDirection(1);
     setUseCaseImageIndex((i) =>
       i === useCaseImages.length - 1 ? 0 : i + 1
@@ -54,8 +60,8 @@ export function ProductDetailClient({
   const handleUseCaseTouchEnd = (e: React.TouchEvent) => {
     const endX = e.changedTouches[0].clientX;
     const delta = touchStartX.current - endX;
-    if (delta > SWIPE_THRESHOLD) useCaseGoNext();
-    else if (delta < -SWIPE_THRESHOLD) useCaseGoPrev();
+    if (delta > SWIPE_THRESHOLD) goToNextUseCase();
+    else if (delta < -SWIPE_THRESHOLD) goToPrevUseCase();
   };
 
   const cards = product.cards;
@@ -428,9 +434,10 @@ export function ProductDetailClient({
               key={useCaseImageIndex}
               className="absolute inset-0"
               custom={useCaseDirection}
-              initial={(dir) => ({ x: dir * 100 + "%" })}
-              animate={{ x: 0 }}
-              exit={(dir) => ({ x: dir * -100 + "%" })}
+              variants={useCaseSlideVariants}
+              initial="enter"
+              animate="center"
+              exit="exit"
               transition={{ duration: 0.35, ease: [0.32, 0.72, 0, 1] }}
             >
               <Image
