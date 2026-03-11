@@ -32,7 +32,8 @@ export function CustomCursor() {
 
     const handleScroll = () => {
       if (pathname !== "/") {
-        setIsDark(false);
+        const isProductDetail = /^\/products\/[^/]+$/.test(pathname);
+        setIsDark(isProductDetail);
         return;
       }
       const hero = document.querySelector("[data-hero-section]");
@@ -42,7 +43,8 @@ export function CustomCursor() {
       }
     };
 
-    if (pathname !== "/") setIsDark(false);
+    const isProductDetail = /^\/products\/[^/]+$/.test(pathname);
+    if (pathname !== "/") setIsDark(isProductDetail);
     else setIsDark(true);
 
     window.addEventListener("mousemove", handleMouseMove);
@@ -59,11 +61,12 @@ export function CustomCursor() {
   }, [pathname]);
 
   const color = isDark ? "#F5F0E8" : "#0A0805";
+  const contrastColor = isDark ? "#0A0805" : "#F5F0E8";
   const ringSize = isHovering ? 48 : 32;
 
   return (
     <>
-      {/* Inner dot - 8px, follows mouse instantly */}
+      {/* Inner dot - 8px, contrasting border for visibility on any background */}
       <motion.div
         className="fixed top-0 left-0 pointer-events-none z-[9999]"
         style={{
@@ -76,10 +79,13 @@ export function CustomCursor() {
       >
         <div
           className="absolute w-2 h-2 rounded-full -translate-x-1/2 -translate-y-1/2"
-          style={{ backgroundColor: color }}
+          style={{
+            backgroundColor: color,
+            border: `1px solid ${contrastColor}`,
+          }}
         />
       </motion.div>
-      {/* Outer ring - follows with lag */}
+      {/* Outer ring - contrasting border for visibility on any background */}
       <motion.div
         className="fixed top-0 left-0 pointer-events-none z-[9998]"
         initial={false}
@@ -94,10 +100,10 @@ export function CustomCursor() {
         }}
       >
         <motion.div
-          className="absolute rounded-full border -translate-x-1/2 -translate-y-1/2"
+          className="absolute rounded-full -translate-x-1/2 -translate-y-1/2"
           style={{
-            borderColor: color,
-            borderWidth: 1,
+            border: `1px solid ${color}`,
+            boxShadow: `0 0 0 1px ${contrastColor}`,
           }}
           initial={{ width: 32, height: 32 }}
           animate={{

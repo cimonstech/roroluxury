@@ -18,7 +18,7 @@ export default function ProductsSection() {
       <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-8 md:gap-12">
         <div>
           <p
-            className="font-syncopate mb-4"
+            className="font-syncopate font-bold mb-4"
             style={{
               fontSize: "0.55rem",
               letterSpacing: "0.4em",
@@ -42,7 +42,7 @@ export default function ProductsSection() {
         </div>
         <div className="w-full md:max-w-[360px]">
           <p
-            className="font-jost font-light"
+            className="font-jost font-normal"
             style={{
               fontSize: "0.9rem",
               color: "#8A8680",
@@ -57,7 +57,7 @@ export default function ProductsSection() {
             className="inline-flex items-center justify-center mt-6 px-6 py-3 rounded-full bg-roro-black text-roro-white font-syncopate text-[0.5rem] tracking-[0.2em] uppercase transition-opacity hover:opacity-90 cursor-none w-fit"
             data-cursor-hover
           >
-            View All Products →
+            Explore the Collection →
           </Link>
         </div>
       </div>
@@ -65,7 +65,13 @@ export default function ProductsSection() {
       {/* Three-column layout - equal width columns, 520px height on desktop */}
       <div className="mt-10 md:mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:items-stretch">
         {/* Column 1 */}
-        <div className="relative rounded-lg overflow-hidden min-h-[280px] md:min-h-[400px] lg:h-[520px]">
+        <div
+          className="relative rounded-lg overflow-hidden min-h-[280px] md:min-h-[400px] lg:h-[520px] border border-roro-grey/20 transition-shadow duration-300 hover:shadow-[0_25px_60px_-15px_rgba(0,0,0,0.12)]"
+          style={{
+            boxShadow:
+              "0 4px 6px -1px rgba(0,0,0,0.03), 0 12px 30px -8px rgba(0,0,0,0.05), 0 24px 50px -12px rgba(0,0,0,0.04)",
+          }}
+        >
           <Image
             src="/indoor_wall_light.jpg"
             alt="Indoor wall lighting"
@@ -83,7 +89,7 @@ export default function ProductsSection() {
             <h3 className="font-cormorant italic text-roro-white text-xl mb-2">
               Walls That Speak
             </h3>
-            <p className="hidden md:block font-jost font-light text-roro-white/90 text-sm leading-relaxed">
+            <p className="hidden md:block font-jost font-normal text-roro-white/90 text-sm leading-relaxed">
               A great wall light does more than illuminate. It sculpts the room
               around it — turning empty walls into statements of taste.
             </p>
@@ -91,7 +97,13 @@ export default function ProductsSection() {
         </div>
 
         {/* Column 2 */}
-        <div className="flex flex-col gap-4 min-h-[280px] md:min-h-[400px] lg:h-[520px]">
+        <div
+          className="flex flex-col gap-4 min-h-[280px] md:min-h-[400px] lg:h-[520px] rounded-lg overflow-hidden border border-roro-grey/20 transition-shadow duration-300 hover:shadow-[0_25px_60px_-15px_rgba(0,0,0,0.12)]"
+          style={{
+            boxShadow:
+              "0 4px 6px -1px rgba(0,0,0,0.03), 0 12px 30px -8px rgba(0,0,0,0.05), 0 24px 50px -12px rgba(0,0,0,0.04)",
+          }}
+        >
           <div className="relative rounded-lg overflow-hidden flex-1 min-h-[140px]">
             <Image
               src="/wall_lamp.webp"
@@ -142,7 +154,13 @@ export default function ProductsSection() {
         </div>
 
         {/* Column 3 */}
-        <div className="relative rounded-lg overflow-hidden min-h-[280px] md:min-h-[400px] lg:h-[520px]">
+        <div
+          className="relative rounded-lg overflow-hidden min-h-[280px] md:min-h-[400px] lg:h-[520px] border border-roro-grey/20 transition-shadow duration-300 hover:shadow-[0_25px_60px_-15px_rgba(0,0,0,0.12)]"
+          style={{
+            boxShadow:
+              "0 4px 6px -1px rgba(0,0,0,0.03), 0 12px 30px -8px rgba(0,0,0,0.05), 0 24px 50px -12px rgba(0,0,0,0.04)",
+          }}
+        >
           <Image
             src="/lady_indoor_light.jpeg"
             alt="Lifestyle indoor lighting"
@@ -160,7 +178,7 @@ export default function ProductsSection() {
             <h3 className="font-cormorant italic text-roro-white text-xl mb-2">
               Your Finest Moments, Lit Perfectly.
             </h3>
-            <p className="hidden md:block font-jost font-light text-roro-white/90 text-sm leading-relaxed">
+            <p className="hidden md:block font-jost font-normal text-roro-white/90 text-sm leading-relaxed">
               Roro brings the kind of light that makes every quiet evening feel
               like a scene worth remembering.
             </p>

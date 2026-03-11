@@ -59,16 +59,15 @@ export default function TrustBand() {
         </div>
         <div>
           <p
-            className="font-cormorant italic"
-            style={{ fontSize: "1.1rem", color: "#F5F0E8" }}
+            className="font-cormorant italic text-[#F5F0E8]"
+            style={{ fontSize: "clamp(0.95rem, 2vw, 1.1rem)" }}
           >
             Trusted by Accra&apos;s Finest Homes
           </p>
           <p
-            className="font-jost font-light"
+            className="font-jost font-light text-[#8A8680]"
             style={{
-              fontSize: "0.75rem",
-              color: "#8A8680",
+              fontSize: "clamp(0.7rem, 1.5vw, 0.75rem)",
               letterSpacing: "0.05em",
             }}
           >
@@ -82,8 +81,8 @@ export default function TrustBand() {
           <div key={stat.label} className="flex items-center gap-8">
             <div>
               <p
-                className="font-cormorant"
-                style={{ fontSize: "2rem", color: "#F5F0E8" }}
+                className="font-cormorant text-[#F5F0E8]"
+                style={{ fontSize: "clamp(1.5rem, 3vw, 2rem)" }}
               >
                 {stat.number}
               </p>

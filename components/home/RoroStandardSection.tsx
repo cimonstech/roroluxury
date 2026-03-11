@@ -80,7 +80,7 @@ export default function RoroStandardSection() {
           Hallway sconces that guide and welcome. Every passage, considered.
         </p>
         <span className="inline-flex items-center justify-center px-4 py-2 rounded-full bg-roro-black text-roro-white font-syncopate text-[0.5rem] tracking-[0.2em] uppercase w-fit transition-opacity hover:opacity-90 mt-4 md:mt-0">
-          Shop the Look →
+          Explore the Collection →
         </span>
       </Link>
         </div>

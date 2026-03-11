@@ -145,11 +145,13 @@ function LitContent({
           <p
             className="font-cormorant italic text-white mb-6 sm:mb-8"
             style={{
-              fontSize: "clamp(2rem, 6vw, 5rem)",
+              fontSize: "clamp(1.6rem, 4.8vw, 4rem)",
               lineHeight: 1.2,
             }}
           >
-            Every Room Deserves a Masterpiece.
+            Every Room Deserves
+            <br />
+            a Masterpiece.
           </p>
           <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-3 sm:gap-4">
             <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
@@ -158,7 +160,7 @@ function LitContent({
                 className="inline-flex items-center justify-center min-w-[180px] sm:min-w-[200px] px-5 py-2.5 sm:px-6 sm:py-3 rounded-full font-syncopate text-white text-[0.5rem] tracking-[0.2em] uppercase transition-opacity hover:opacity-90 bg-roro-black border-2 border-white"
                 data-cursor-hover
               >
-                Experience the Collection
+                Explore the Collection
               </Link>
             </motion.div>
             <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
@@ -172,7 +174,7 @@ function LitContent({
                 }}
                 data-cursor-hover
               >
-                Shop Now
+                Explore the Collection
               </Link>
             </motion.div>
           </div>
@@ -200,7 +202,7 @@ function LitContent({
             >
               <motion.button
                 type="button"
-                className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border border-white flex items-center justify-center font-syncopate text-white text-xs sm:text-sm bg-white/10 backdrop-blur-sm cursor-pointer hover:scale-110 active:scale-95 border-roro-white/90 transition-transform shrink-0"
+                className="min-w-[44px] min-h-[44px] w-11 h-11 sm:w-12 sm:h-12 rounded-full border border-white flex items-center justify-center font-syncopate text-white text-xs sm:text-sm bg-white/10 backdrop-blur-sm cursor-pointer hover:scale-110 active:scale-95 border-roro-white/90 transition-transform shrink-0"
                 style={{
                   boxShadow: "0 0 12px rgba(255,255,255,0.3)",
                   animation: "pulse-ring 2s ease-in-out infinite",
@@ -226,7 +228,7 @@ function LitContent({
                       animate={{ opacity: 1, x: 0 }}
                       exit={{ opacity: 0, x: -8 }}
                       transition={{ duration: 0.25, ease: "easeOut" }}
-                      className="rounded-lg px-3 py-2 sm:px-4 sm:py-3 bg-white shadow-xl whitespace-nowrap"
+                      className="rounded-lg px-3 py-2 sm:px-4 sm:py-3 bg-white shadow-xl max-w-[min(90vw,280px)] break-words"
                       style={{
                         boxShadow: "0 8px 40px rgba(0,0,0,0.25)",
                       }}

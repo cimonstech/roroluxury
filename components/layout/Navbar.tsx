@@ -87,17 +87,25 @@ export function Navbar() {
 
         {/* Desktop nav */}
         <div className="hidden md:flex items-center gap-8">
-          {NAV_LINKS.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="font-syncopate text-white uppercase transition-opacity duration-300 hover:opacity-60"
-              style={{ fontSize: "0.5rem", letterSpacing: "0.25em" }}
-              data-cursor-hover
-            >
-              {link.label}
-            </Link>
-          ))}
+          {NAV_LINKS.map((link) => {
+            const isActive =
+              link.href === "/"
+                ? pathname === "/"
+                : pathname === link.href || pathname.startsWith(link.href + "/");
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={`font-syncopate text-white uppercase transition-opacity duration-300 hover:opacity-60 ${
+                  isActive ? "font-bold opacity-100" : "opacity-80"
+                }`}
+                style={{ fontSize: "0.5rem", letterSpacing: "0.25em" }}
+                data-cursor-hover
+              >
+                {link.label}
+              </Link>
+            );
+          })}
           <Link
             href="/cart"
             className="relative inline-flex items-center text-white transition-opacity duration-300 hover:opacity-60"
@@ -112,9 +120,9 @@ export function Navbar() {
           </Link>
         </div>
 
-        {/* Mobile: cart + hamburger */}
-        <div className="flex md:hidden items-center gap-3">
-          <Link href="/cart" className="relative p-2" aria-label="Cart">
+        {/* Mobile: cart + hamburger — min 44px touch targets */}
+        <div className="flex md:hidden items-center gap-1">
+          <Link href="/cart" className="relative p-3 min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="Cart">
             <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
             </svg>
@@ -123,7 +131,7 @@ export function Navbar() {
           <button
             type="button"
             onClick={() => setMobileOpen((o) => !o)}
-            className="p-2 text-white"
+            className="p-3 min-h-[44px] min-w-[44px] flex items-center justify-center text-white"
             aria-label="Menu"
           >
             {mobileOpen ? (
@@ -166,16 +174,24 @@ export function Navbar() {
                   Tip: Double tap anywhere on the header area to turn on the lights.
                 </motion.p>
               )}
-              {NAV_LINKS.map((link) => (
-                <motion.div key={link.href} variants={{ open: { opacity: 1, y: 0 }, closed: { opacity: 0, y: 10 } }}>
-                  <Link
-                    href={link.href}
-                    className="font-syncopate text-roro-white text-lg uppercase tracking-widest block py-2"
-                  >
-                    {link.label}
-                  </Link>
-                </motion.div>
-              ))}
+              {NAV_LINKS.map((link) => {
+                const isActive =
+                  link.href === "/"
+                    ? pathname === "/"
+                    : pathname === link.href || pathname.startsWith(link.href + "/");
+                return (
+                  <motion.div key={link.href} variants={{ open: { opacity: 1, y: 0 }, closed: { opacity: 0, y: 10 } }}>
+                    <Link
+                      href={link.href}
+                      className={`font-syncopate text-[1.125rem] uppercase tracking-widest block py-3 min-h-[44px] flex items-center ${
+                        isActive ? "font-bold text-roro-white" : "text-roro-white/80"
+                      }`}
+                    >
+                      {link.label}
+                    </Link>
+                  </motion.div>
+                );
+              })}
             </motion.nav>
           </motion.div>
         )}

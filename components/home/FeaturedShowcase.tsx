@@ -45,7 +45,7 @@ export default function FeaturedShowcase() {
             for Everyday.
           </h2>
           <p
-            className="font-jost font-light text-roro-grey mb-8"
+            className="font-jost font-normal text-roro-grey mb-8"
             style={{ fontSize: "1rem", lineHeight: 1.7 }}
           >
             Roro brings intelligence and elegance together, designed to simplify
@@ -57,7 +57,7 @@ export default function FeaturedShowcase() {
             className="inline-flex items-center gap-2 w-fit px-6 py-3 rounded-full bg-roro-black text-roro-white font-syncopate text-[0.5rem] tracking-[0.2em] uppercase transition-opacity hover:opacity-90 cursor-none"
             data-cursor-hover
           >
-            View Product
+            Explore the Collection
             <span className="text-sm">→</span>
           </Link>
         </div>
@@ -69,7 +69,11 @@ export default function FeaturedShowcase() {
               <Link
                 key={product.id}
                 href={`/products/${product.slug}`}
-                className="relative aspect-square rounded-xl overflow-hidden bg-roro-grey/10"
+                className="relative aspect-square rounded-xl overflow-hidden bg-roro-grey/10 border border-roro-grey/20 transition-shadow duration-300 hover:shadow-[0_25px_60px_-15px_rgba(0,0,0,0.12)]"
+                style={{
+                  boxShadow:
+                    "0 4px 6px -1px rgba(0,0,0,0.03), 0 12px 30px -8px rgba(0,0,0,0.05), 0 24px 50px -12px rgba(0,0,0,0.04)",
+                }}
                 data-cursor-hover
               >
                 <Image
@@ -85,8 +89,8 @@ export default function FeaturedShowcase() {
             {KEYWORDS.map((kw) => (
               <span
                 key={kw.label}
-                className={`font-syncopate text-[0.5rem] tracking-[0.2em] uppercase ${
-                  kw.active ? "text-roro-black font-bold" : "text-roro-grey"
+                className={`font-syncopate font-bold text-[0.5rem] tracking-[0.2em] uppercase ${
+                  kw.active ? "text-roro-black" : "text-roro-grey"
                 }`}
               >
                 {kw.label}
@@ -106,7 +110,11 @@ export default function FeaturedShowcase() {
         >
         <Link
           href={`/products/${featuredProduct.slug}`}
-          className="relative aspect-square max-h-[400px] md:max-h-[500px] rounded-xl overflow-hidden bg-roro-grey/10 block"
+          className="relative aspect-square max-h-[400px] md:max-h-[500px] rounded-xl overflow-hidden bg-roro-grey/10 block border border-roro-grey/20 transition-shadow duration-300 hover:shadow-[0_25px_60px_-15px_rgba(0,0,0,0.12)]"
+          style={{
+            boxShadow:
+              "0 4px 6px -1px rgba(0,0,0,0.03), 0 12px 30px -8px rgba(0,0,0,0.05), 0 24px 50px -12px rgba(0,0,0,0.04)",
+          }}
           data-cursor-hover
         >
           <Image
@@ -129,7 +137,7 @@ export default function FeaturedShowcase() {
                   </span>
                 </div>
                 <p
-                  className="font-jost font-light text-roro-grey pt-1"
+                  className="font-jost font-normal text-roro-grey pt-1"
                   style={{ fontSize: "0.95rem", lineHeight: 1.7 }}
                 >
                   {text}
@@ -141,7 +149,7 @@ export default function FeaturedShowcase() {
           {/* Trust stats */}
           <div className="flex flex-wrap items-center gap-8">
             <div>
-              <p className="font-syncopate text-roro-black text-[0.5rem] tracking-[0.2em] uppercase mb-2">
+              <p className="font-syncopate font-bold text-roro-black text-[0.5rem] tracking-[0.2em] uppercase mb-2">
                 Trusted by homeowners
               </p>
               <div className="flex -space-x-2">
@@ -164,7 +172,7 @@ export default function FeaturedShowcase() {
               <p className="font-cormorant text-roro-black text-2xl font-semibold">
                 100+
               </p>
-              <p className="font-syncopate text-roro-grey text-[0.45rem] tracking-[0.15em] uppercase">
+              <p className="font-syncopate font-bold text-roro-grey text-[0.45rem] tracking-[0.15em] uppercase">
                 Unique Lights
               </p>
             </div>

@@ -31,6 +31,7 @@ const jost = Jost({
 export const metadata: Metadata = {
   title: SITE.name,
   description: SITE.tagline,
+  icons: "/favicon.ico",
 };
 
 export default function RootLayout({

@@ -86,7 +86,7 @@ export default function CartPage() {
                         onClick={() =>
                           updateQuantity(item.product.id, item.quantity - 1)
                         }
-                        className="w-8 h-8 rounded-full border border-roro-grey/40 flex items-center justify-center hover:bg-roro-black hover:text-roro-white hover:border-roro-black transition-colors text-roro-black"
+                        className="min-w-[44px] min-h-[44px] w-11 h-11 sm:w-8 sm:h-8 rounded-full border border-roro-grey/40 flex items-center justify-center hover:bg-roro-black hover:text-roro-white hover:border-roro-black transition-colors text-roro-black"
                         aria-label="Decrease quantity"
                       >
                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -100,7 +100,7 @@ export default function CartPage() {
                         onClick={() =>
                           updateQuantity(item.product.id, item.quantity + 1)
                         }
-                        className="w-8 h-8 rounded-full border border-roro-grey/40 flex items-center justify-center hover:bg-roro-black hover:text-roro-white hover:border-roro-black transition-colors text-roro-black"
+                        className="min-w-[44px] min-h-[44px] w-11 h-11 sm:w-8 sm:h-8 rounded-full border border-roro-grey/40 flex items-center justify-center hover:bg-roro-black hover:text-roro-white hover:border-roro-black transition-colors text-roro-black"
                         aria-label="Increase quantity"
                       >
                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -113,7 +113,7 @@ export default function CartPage() {
                     <button
                       type="button"
                       onClick={() => removeItem(item.product.id)}
-                      className="font-syncopate text-roro-grey text-[0.45rem] tracking-[0.1em] uppercase hover:text-roro-black transition-colors"
+                      className="font-syncopate text-roro-grey text-[0.45rem] tracking-[0.1em] uppercase hover:text-roro-black transition-colors min-h-[44px] flex items-center"
                     >
                       Remove
                     </button>
@@ -124,7 +124,7 @@ export default function CartPage() {
             <button
               type="button"
               onClick={() => clearCart()}
-              className="font-syncopate text-roro-grey text-[0.45rem] tracking-[0.2em] uppercase hover:text-roro-black transition-colors"
+              className="font-syncopate text-roro-grey text-[0.45rem] tracking-[0.2em] uppercase hover:text-roro-black transition-colors min-h-[44px] flex items-center"
             >
               Clear cart
             </button>

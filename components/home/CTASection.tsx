@@ -43,7 +43,7 @@ export default function CTASection() {
               className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-roro-white text-roro-black font-syncopate text-[0.5rem] tracking-[0.2em] uppercase transition-opacity hover:opacity-90 cursor-none"
               data-cursor-hover
             >
-              View Collections
+              Explore the Collection
               <span>→</span>
             </Link>
             <a
